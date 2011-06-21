@@ -28,7 +28,7 @@ module Split
       session[:split].each_with_index do |h,i|
         arr << "_gaq.push(['_setCustomVar', #{i+1}, '#{h[0]}', '#{h[1]}', 1]);"
       end
-      arr[-5..-1].join("\n")
+      arr.reverse[0..4].reverse.join("\n")
     end
   end
 end
