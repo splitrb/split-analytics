@@ -24,9 +24,11 @@ module Split
 
     def custom_variables
       return nil if session[:split].nil?
-      session[:split].map do |k,v|
-        "_gaq.push(['_setCustomVar', 1, '#{k}', '#{v}', 1]);"
-      end.join("\n")
+      arr = []
+      session[:split].each_with_index do |h,i|
+        arr << "_gaq.push(['_setCustomVar', #{i+1}, '#{h[0]}', '#{h[1]}', 1]);"
+      end
+      arr[-5..-1].join("\n")
     end
   end
 end
