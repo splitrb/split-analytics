@@ -1,0 +1,56 @@
+# Split::Analytics
+
+An extension to [Split](http://github.com/andrew/split) to push test data to google analytics.
+
+## Requirements
+
+The split gem and its dependencies.
+
+## Setup
+
+If you are using bundler add split to your Gemfile:
+
+    gem 'split-analytics', :require => 'split/analytics'
+
+Then run:
+
+    bundle install
+
+Otherwise install the gem:
+
+    gem install split-analytics
+
+and require it in your project:
+
+    require 'split/analytics'
+
+## Usage
+
+Use in your application layout template
+
+    # erb
+    <%= tracking_code(:account => 'UA-12345-6') %>
+
+    # haml
+    = tracking_code(:account => 'UA-12345-6')
+
+## Development
+
+Source hosted at [GitHub](http://github.com/andrew/split-analytics).
+Report Issues/Feature requests on [GitHub Issues](http://github.com/andrew/split-analytics/issues).
+
+Tests can be ran with `rake spec`
+
+### Note on Patches/Pull Requests
+
+ * Fork the project.
+ * Make your feature addition or bug fix.
+ * Add tests for it. This is important so I don't break it in a
+   future version unintentionally.
+ * Commit, do not mess with rakefile, version, or history.
+   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+ * Send me a pull request. Bonus points for topic branches.
+
+## Copyright
+
+Copyright (c) 2011 Andrew Nesbitt. See LICENSE for details.
