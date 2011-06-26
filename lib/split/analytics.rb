@@ -6,7 +6,7 @@ module Split
       # needs more options: http://code.google.com/apis/analytics/docs/gaJS/gaJSApi.html
       account = options.delete(:account)
 
-      <<-EOF
+      code = <<-EOF
         <script type="text/javascript">
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', '#{account}']);
@@ -21,6 +21,8 @@ module Split
           })();
         </script>
       EOF
+      code = raw(code)if defined?(raw)
+      code
     end
 
     def custom_variables
