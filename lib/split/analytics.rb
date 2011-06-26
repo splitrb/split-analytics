@@ -38,4 +38,9 @@ module Split::Helper
   include Split::Analytics
 end
 
-# mix Spilt::Analytics into Split::Helpers
+if defined?(Rails)
+  class ActionController::Base
+    ActionController::Base.send :include, Split::Analytics
+    ActionController::Base.helper Split::Analytics
+  end
+end
