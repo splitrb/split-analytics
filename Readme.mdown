@@ -10,29 +10,43 @@ The split gem and its dependencies.
 
 If you are using bundler add split to your Gemfile:
 
-    gem 'split-analytics', :require => 'split/analytics'
+```ruby
+gem 'split-analytics', :require => 'split/analytics'
+```
 
 Then run:
 
-    bundle install
+```bash
+bundle install
+```
 
 Otherwise install the gem:
 
-    gem install split-analytics
+```bash
+gem install split-analytics
+```
 
 and require it in your project:
 
-    require 'split/analytics'
+```ruby
+require 'split/analytics'
+```
 
 ## Usage
 
 Use in your application layout template
 
-    # erb
-    <%= tracking_code(:account => 'UA-12345-6') %>
+erb example:
 
-    # haml
-    = tracking_code(:account => 'UA-12345-6')
+```erb
+<%= tracking_code(:account => 'UA-12345-6') %>
+```
+
+haml example:
+
+```haml
+= tracking_code(:account => 'UA-12345-6')
+```
 
 ## Development
 
