@@ -48,6 +48,28 @@ haml example:
 = tracking_code(:account => 'UA-12345-6')
 ```
 
+# With Tracking Methods
+
+See [Google Analytics Tracking Methods](https://developers.google.com/analytics/devguides/collection/gajs/methods/) for available options.
+
+```tracker_methods = {
+  ```:setDomainName => "example.com", # String argument
+  ```:setAllowLinker => true, # Boolean argument
+  ``:clearOrganic => "" # No argument
+```}
+
+erb example:
+
+```erb
+<%= tracking_code(:account => 'UA-12345-6', :tracking_methods => tracking_methods) %>
+```
+
+haml example:
+
+```haml
+= tracking_code(:account => 'UA-12345-6', :tracking_methods => tracking_methods)
+```
+
 ## Development
 
 Source hosted at [GitHub](http://github.com/andrew/split-analytics).
