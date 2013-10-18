@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["andrewnez@gmail.com"]
   gem.summary       = %q{Split extension to push test data to google analytics}
   gem.homepage      = "https://github.com/andrew/split-analytics"
+  gem.license       = 'MIT'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
