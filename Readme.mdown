@@ -63,13 +63,13 @@ tracker_methods = {
 erb example:
 
 ```erb
-<%= tracking_code(:account => 'UA-12345-6', :tracking_methods => tracking_methods) %>
+<%= tracking_code(:account => 'UA-12345-6', :tracker_methods => tracker_methods) %>
 ```
 
 haml example:
 
 ```haml
-= tracking_code(:account => 'UA-12345-6', :tracking_methods => tracking_methods)
+= tracking_code(:account => 'UA-12345-6', :tracker_methods => tracker_methods)
 ```
 
 ## Development
