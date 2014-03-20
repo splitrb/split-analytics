@@ -59,6 +59,10 @@ module Split
             when FalseClass
               # Boolean argument tracker method
               arr << "_gaq.push(['" + "_" + "#{k}', #{v}]);"
+            when Array
+              # Array argument tracker method
+              values = v.map { |value| "'#{value}'" }.join(', ')
+              arr << "_gaq.push(['" + "_" + "#{k}', #{values}]);"
             end
           end
         end

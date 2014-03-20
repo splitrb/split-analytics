@@ -56,6 +56,7 @@ See [Google Analytics Tracking Methods](https://developers.google.com/analytics/
 tracker_methods = {
   :setDomainName => "example.com", # String argument
   :setAllowLinker => true, # Boolean argument
+  :require => ['inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js'] # Array argument (will be splattered)
   :clearOrganic => "" # No argument
 }
 ```
