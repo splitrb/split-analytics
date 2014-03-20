@@ -5,8 +5,13 @@ module Split
     def tracking_code(options={})
       # needs more options: http://code.google.com/apis/analytics/docs/gaJS/gaJSApi.html
       account = options.delete(:account)
+      tracker_url = options.delete(:tracker_url)
+      ssl_tracker_url = options.delete(:ssl_tracker_url)
       tracker_methods = options.delete(:tracker_methods)
-      
+
+      tracker_url = 'http://' + (tracker_url || 'www.google-analytics.com/ga.js')
+      ssl_tracker_url = 'https://' + (ssl_tracker_url || 'ssl.google-analytics.com/ga.js')
+
       code = <<-EOF
         <script type="text/javascript">
           var _gaq = _gaq || [];
@@ -16,7 +21,7 @@ module Split
           _gaq.push(['_trackPageview']);
           (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            ga.src = ('https:' == document.location.protocol ? '#{ssl_tracker_url}' : '#{tracker_url}');
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
         </script>
@@ -33,9 +38,9 @@ module Split
       end
       arr.reverse[0..4].reverse.join("\n")
     end
-    
+
     private
-    
+
       def insert_tracker_methods(tracker_methods)
         return nil if tracker_methods.nil?
         arr = []
