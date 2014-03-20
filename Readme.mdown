@@ -79,13 +79,13 @@ You can use other Tracking URLs with the option tracker_url and ssl_tracker_url.
 erb example:
 
 ```erb
-<%= tracking_code(:account => 'UA-12345-6', :tracker_url: 'stats.g.doubleclick.net/dc.js', ssl_tracker_url: 'stats.g.doubleclick.net/dc.js') %>
+<%= tracking_code(:account => 'UA-12345-6', :tracker_url => 'stats.g.doubleclick.net/dc.js', :ssl_tracker_url => 'stats.g.doubleclick.net/dc.js') %>
 ```
 
 haml example:
 
 ```haml
-= tracking_code(:account => 'UA-12345-6', :tracker_url: 'stats.g.doubleclick.net/dc.js', ssl_tracker_url: 'stats.g.doubleclick.net/dc.js')
+= tracking_code(:account => 'UA-12345-6', :tracker_url => 'stats.g.doubleclick.net/dc.js', :ssl_tracker_url => 'stats.g.doubleclick.net/dc.js')
 ```
 
 ## Development
