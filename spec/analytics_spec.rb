@@ -26,4 +26,9 @@ describe Split::Analytics do
     tracking_code = tracking_code(:account => 'UA-12345-6')
     tracking_code.should eql("        <script type=\"text/javascript\">\n          var _gaq = _gaq || [];\n          _gaq.push(['_setAccount', 'UA-12345-6']);\n          _gaq.push(['_setCustomVar', 1, 'link_colour', '#{first_alt}', 1]);\n_gaq.push(['_setCustomVar', 2, 'link_text', '#{second_alt}', 1]);\n\n          (function() {\n            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\n          })();\n        </script>\n")
   end
+
+  it "uses doubleclick as tracker url" do
+    tracking_code = tracking_code(:account => 'UA-12345-6', :tracker_url => 'stats.g.doubleclick.net/dc.js', :ssl_tracker_url => 'stats.g.doubleclick.net/dc.js')
+    tracking_code.should eql("        <script type=\"text/javascript\">\n          var _gaq = _gaq || [];\n          _gaq.push(['_setAccount', 'UA-12345-6']);\n          \n          \n          _gaq.push(['_trackPageview']);\n          (function() {\n            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n            ga.src = ('https:' == document.location.protocol ? 'https://stats.g.doubleclick.net/dc.js' : 'http://stats.g.doubleclick.net/dc.js');\n            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\n          })();\n        </script>\n")
+  end
 end
