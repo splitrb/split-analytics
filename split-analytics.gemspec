@@ -19,4 +19,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency('split', ">= 0.3.0")
 
   gem.add_development_dependency('rspec', "~> 2.14")
+  gem.add_development_dependency('rake', ">= 10.3.2")
 end
