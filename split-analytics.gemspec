@@ -16,8 +16,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Split::Analytics::VERSION
 
-  gem.add_dependency('split', ">= 0.3.0")
+  gem.add_dependency('split', '>= 1.0.0')
 
-  gem.add_development_dependency('rspec', "~> 2.14")
-  gem.add_development_dependency('rake', ">= 10.3.2")
+  gem.add_development_dependency('rspec', '~> 3.1')
+  gem.add_development_dependency('rake', '~> 10.4')
 end
