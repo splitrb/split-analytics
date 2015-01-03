@@ -56,7 +56,7 @@ haml example:
 
 See [Google Analytics Tracking Methods](https://developers.google.com/analytics/devguides/collection/gajs/methods/) for available options.
 
-```
+```ruby
 tracker_methods = {
   :setDomainName => "example.com", # String argument
   :setAllowLinker => true, # Boolean argument
