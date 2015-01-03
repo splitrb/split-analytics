@@ -1,8 +1,8 @@
-require "split/helper"
+require 'split/helper'
 
 module Split
   module Analytics
-    def tracking_code(options={})
+    def tracking_code(options = {})
       # needs more options: http://code.google.com/apis/analytics/docs/gaJS/gaJSApi.html
       account = options.delete(:account)
       tracker_url = options.delete(:tracker_url)
@@ -26,15 +26,15 @@ module Split
           })();
         </script>
       EOF
-      code = raw(code)if defined?(raw)
+      code = raw(code) if defined?(raw)
       code
     end
 
     def custom_variables
       return nil if ab_user.nil?
       arr = []
-      ab_user.each_with_index do |h,i|
-        arr << "_gaq.push(['_setCustomVar', #{i+1}, '#{h[0]}', '#{h[1]}', 1]);"
+      ab_user.each_with_index do |h, i|
+        arr << "_gaq.push(['_setCustomVar', #{i + 1}, '#{h[0]}', '#{h[1]}', 1]);"
       end
       arr.reverse[0..4].reverse.join("\n")
     end
@@ -44,7 +44,7 @@ module Split
       def insert_tracker_methods(tracker_methods)
         return nil if tracker_methods.nil?
         arr = []
-        tracker_methods.each do |k,v|
+        tracker_methods.each do |k, v|
           if v.class == String && v.empty?
             # No argument tracker method
             arr << "_gaq.push(['" + "_" + "#{k}']);"
@@ -52,17 +52,17 @@ module Split
             case v
             when String
               # String argument tracker method
-              arr << "_gaq.push(['" + "_" + "#{k}', '#{v}']);"
+              arr << "_gaq.push(['" + '_' + "#{k}', '#{v}']);"
             when TrueClass
               # Boolean argument tracker method
-              arr << "_gaq.push(['" + "_" + "#{k}', #{v}]);"
+              arr << "_gaq.push(['" + '_' + "#{k}', #{v}]);"
             when FalseClass
               # Boolean argument tracker method
-              arr << "_gaq.push(['" + "_" + "#{k}', #{v}]);"
+              arr << "_gaq.push(['" + '_' + "#{k}', #{v}]);"
             when Array
               # Array argument tracker method
               values = v.map { |value| "'#{value}'" }.join(', ')
-              arr << "_gaq.push(['" + "_" + "#{k}', #{values}]);"
+              arr << "_gaq.push(['" + '_' + "#{k}', #{values}]);"
             end
           end
         end
