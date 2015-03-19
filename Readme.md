@@ -1,4 +1,4 @@
-# Split::Analytics
+# [Split Analytics](http://libraries.io/rubygems/split-analytics)
 
 An extension to [Split](http://github.com/andrew/split) to push test data to google analytics.
 
