@@ -1,6 +1,6 @@
 # [Split Analytics](http://libraries.io/rubygems/split-analytics)
 
-An extension to [Split](http://github.com/andrew/split) to push test data to google analytics.
+An extension to [Split](http://github.com/splitrb/split) to push test data to google analytics.
 
 [![Build Status](https://secure.travis-ci.org/andrew/split-analytics.svg?branch=master)](http://travis-ci.org/andrew/split-analytics)
 [![Gem Version](https://badge.fury.io/rb/split-analytics.svg)](http://badge.fury.io/rb/split-analytics)
@@ -94,8 +94,8 @@ haml example:
 
 ## Development
 
-Source hosted at [GitHub](http://github.com/andrew/split-analytics).
-Report Issues/Feature requests on [GitHub Issues](http://github.com/andrew/split-analytics/issues).
+Source hosted at [GitHub](http://github.com/splitrb/split-analytics).
+Report Issues/Feature requests on [GitHub Issues](http://github.com/splitrb/split-analytics/issues).
 
 Tests can be ran with `rake spec`
 
