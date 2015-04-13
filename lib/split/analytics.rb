@@ -31,9 +31,9 @@ module Split
     end
 
     def custom_variables
-      return nil if ab_user.nil?
+      return nil if session[:split].nil?
       arr = []
-      ab_user.each_with_index do |h, i|
+      session[:split].each_with_index do |h, i|
         arr << "_gaq.push(['_setCustomVar', #{i + 1}, '#{h[0]}', '#{h[1]}', 1]);"
       end
       arr.reverse[0..4].reverse.join("\n")

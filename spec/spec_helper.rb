@@ -5,6 +5,10 @@ require 'split/helper'
 require 'split/analytics'
 require 'ostruct'
 
+def session
+  @ab_user ||= {}
+end
+
 RSpec.configure do |config|
   config.order = 'random'
   config.before(:each) do
