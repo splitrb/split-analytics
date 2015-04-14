@@ -15,10 +15,10 @@ module Split
       code = <<-EOF
         <script type="text/javascript">
           var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', '#{account}']);
+          _gaq.push(["_setAccount", "#{account}"]);
           #{insert_tracker_methods(tracker_methods)}
           #{custom_variables}
-          _gaq.push(['_trackPageview']);
+          _gaq.push(["_trackPageview"]);
           (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
             ga.src = ('https:' == document.location.protocol ? '#{ssl_tracker_url}' : '#{tracker_url}');
