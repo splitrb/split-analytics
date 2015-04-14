@@ -34,7 +34,7 @@ module Split
       return nil if session[:split].nil?
       arr = []
       session[:split].each_with_index do |h, i|
-        arr << "_gaq.push(['_setCustomVar', #{i + 1}, '#{h[0]}', '#{h[1]}', 1]);"
+        arr << "_gaq.push([\"_setCustomVar\", #{i + 1}, \"#{h[0]}\", \"#{h[1]}\", 1]);"
       end
       arr.reverse[0..4].reverse.join("\n")
     end
@@ -47,22 +47,22 @@ module Split
         tracker_methods.each do |k, v|
           if v.class == String && v.empty?
             # No argument tracker method
-            arr << "_gaq.push(['" + "_" + "#{k}']);"
+            arr << "_gaq.push([\"" + "_" + "#{k}\"]);"
           else
             case v
             when String
               # String argument tracker method
-              arr << "_gaq.push(['" + '_' + "#{k}', '#{v}']);"
+              arr << "_gaq.push([\"" + '_' + "#{k}\", \"#{v}\"]);"
             when TrueClass
               # Boolean argument tracker method
-              arr << "_gaq.push(['" + '_' + "#{k}', #{v}]);"
+              arr << "_gaq.push([\"" + '_' + "#{k}\", #{v}]);"
             when FalseClass
               # Boolean argument tracker method
-              arr << "_gaq.push(['" + '_' + "#{k}', #{v}]);"
+              arr << "_gaq.push([\"" + '_' + "#{k}\", #{v}]);"
             when Array
               # Array argument tracker method
-              values = v.map { |value| "'#{value}'" }.join(', ')
-              arr << "_gaq.push(['" + '_' + "#{k}', #{values}]);"
+              values = v.map { |value| "\"#{value}\"" }.join(', ')
+              arr << "_gaq.push([\"" + '_' + "#{k}\", #{values}]);"
             end
           end
         end
