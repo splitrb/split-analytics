@@ -2,9 +2,9 @@
 
 An extension to [Split](http://github.com/splitrb/split) to push test data to google analytics.
 
-[![Build Status](https://secure.travis-ci.org/andrew/split-analytics.svg?branch=master)](http://travis-ci.org/andrew/split-analytics)
+[![Build Status](https://secure.travis-ci.org/splitrb/split-analytics.svg?branch=master)](http://travis-ci.org/andrew/split-analytics)
 [![Gem Version](https://badge.fury.io/rb/split-analytics.svg)](http://badge.fury.io/rb/split-analytics)
-[![Dependency Status](https://gemnasium.com/andrew/split-analytics.svg)](https://gemnasium.com/andrew/split-analytics)
+[![Dependency Status](https://gemnasium.com/splitrb/split-analytics.svg)](https://gemnasium.com/andrew/split-analytics)
 
 ## Requirements
 
