@@ -5,8 +5,9 @@ require 'split/analytics/version'
 Gem::Specification.new do |gem|
   gem.authors       = ['Andrew Nesbitt']
   gem.email         = ['andrewnez@gmail.com']
-  gem.summary       = 'Split extension to push test data to google analytics'
+  gem.summary       = 'Split extension to push test data to Google Analytics'
   gem.homepage      = 'https://github.com/splitrb/split-analytics'
+  gem.bug_tracker_uri      = 'https://github.com/splitrb/split-analytics/issues'
   gem.license       = 'MIT'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }

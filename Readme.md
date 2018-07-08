@@ -1,16 +1,18 @@
 # [Split Analytics](http://libraries.io/rubygems/split-analytics)
 
-An extension to [Split](http://github.com/splitrb/split) to push test data to google analytics.
+> 📊 An extension to [Split](http://github.com/splitrb/split) to push test data to Google Analytics
 
 [![Build Status](https://secure.travis-ci.org/splitrb/split-analytics.svg?branch=master)](http://travis-ci.org/andrew/split-analytics)
 [![Gem Version](https://badge.fury.io/rb/split-analytics.svg)](http://badge.fury.io/rb/split-analytics)
 [![Dependency Status](https://gemnasium.com/splitrb/split-analytics.svg)](https://gemnasium.com/andrew/split-analytics)
 
-## Requirements
+## Install
+
+### Requirements
 
 The split gem and its dependencies.
 
-## Setup
+### Setup
 
 If you are using bundler add split to your Gemfile:
 
@@ -92,12 +94,12 @@ haml example:
 = tracking_code(:account => 'UA-12345-6', :tracker_url => 'stats.g.doubleclick.net/dc.js', :ssl_tracker_url => 'stats.g.doubleclick.net/dc.js')
 ```
 
-## Development
+## Contributing
 
 Source hosted at [GitHub](http://github.com/splitrb/split-analytics).
 Report Issues/Feature requests on [GitHub Issues](http://github.com/splitrb/split-analytics/issues).
 
-Tests can be ran with `rake spec`
+Please follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Note on Patches/Pull Requests
 
@@ -109,6 +111,10 @@ Tests can be ran with `rake spec`
    (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
  * Send me a pull request. Bonus points for topic branches.
 
-## Copyright
+### Testing
 
-Copyright (c) 2015 Andrew Nesbitt. See LICENSE for details.
+Tests can be ran with `rake spec`.
+
+## License
+
+Copyright (c) 2015-2018 Andrew Nesbitt. See [LICENSE](LICENSE) for details.
