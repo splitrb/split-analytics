@@ -16,8 +16,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Split::Analytics::VERSION
 
-  gem.add_dependency('split', '>= 1.0.0')
+  gem.add_dependency('split', '>= 3.0.0')
 
   gem.add_development_dependency('rspec', '~> 3.1')
   gem.add_development_dependency('rake', '~> 12.3')
+  gem.add_development_dependency('fakeredis', '~> 0.7')
 end
