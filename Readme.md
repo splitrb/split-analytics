@@ -17,7 +17,7 @@ The split gem and its dependencies.
 If you are using bundler add split to your Gemfile:
 
 ```ruby
-gem 'split-analytics', :require => 'split/analytics'
+gem 'split-analytics', require: 'split/analytics'
 ```
 
 Then run:
@@ -45,13 +45,13 @@ Use in your application layout template
 erb example:
 
 ```erb
-<%= tracking_code(:account => 'UA-12345-6') %>
+<%= tracking_code(account: 'UA-12345-6') %>
 ```
 
 haml example:
 
 ```haml
-= tracking_code(:account => 'UA-12345-6')
+= tracking_code(account: 'UA-12345-6')
 ```
 
 ### With Tracking Methods
@@ -60,23 +60,23 @@ See [Google Analytics Tracking Methods](https://developers.google.com/analytics/
 
 ```ruby
 tracker_methods = {
-  :setDomainName => "example.com", # String argument
-  :setAllowLinker => true, # Boolean argument
-  :require => ['inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js'] # Array argument (will be splattered)
-  :clearOrganic => "" # No argument
+  setDomainName: "example.com", # String argument
+  setAllowLinker: true, # Boolean argument
+  require: ['inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js'] # Array argument (will be splattered)
+  clearOrganic: "" # No argument
 }
 ```
 
 erb example:
 
 ```erb
-<%= tracking_code(:account => 'UA-12345-6', :tracker_methods => tracker_methods) %>
+<%= tracking_code(account: 'UA-12345-6', tracker_methods: tracker_methods) %>
 ```
 
 haml example:
 
 ```haml
-= tracking_code(:account => 'UA-12345-6', :tracker_methods => tracker_methods)
+= tracking_code(account: 'UA-12345-6', tracker_methods: tracker_methods)
 ```
 ### Other Tracking URLs
 
@@ -85,13 +85,13 @@ You can use other Tracking URLs with the option tracker_url and ssl_tracker_url.
 erb example:
 
 ```erb
-<%= tracking_code(:account => 'UA-12345-6', :tracker_url => 'stats.g.doubleclick.net/dc.js', :ssl_tracker_url => 'stats.g.doubleclick.net/dc.js') %>
+<%= tracking_code(account: 'UA-12345-6', tracker_url: 'stats.g.doubleclick.net/dc.js', ssl_tracker_url: 'stats.g.doubleclick.net/dc.js') %>
 ```
 
 haml example:
 
 ```haml
-= tracking_code(:account => 'UA-12345-6', :tracker_url => 'stats.g.doubleclick.net/dc.js', :ssl_tracker_url => 'stats.g.doubleclick.net/dc.js')
+= tracking_code(account: 'UA-12345-6', tracker_url: 'stats.g.doubleclick.net/dc.js', ssl_tracker_url: 'stats.g.doubleclick.net/dc.js')
 ```
 
 ## Contributing
