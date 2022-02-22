@@ -1,8 +1,0 @@
-language: ruby
-rvm:
-  - 2.2.4
-
-services:
-   - redis-server
-cache: bundler
-sudo: false
