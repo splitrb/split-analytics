@@ -5,17 +5,13 @@ require 'split/helper'
 require 'split/analytics'
 require 'ostruct'
 
-require "fakeredis"
-
-G_fakeredis = Redis.new
-
 module GlobalSharedContext
   extend RSpec::SharedContext
   let(:ab_user){ Split::User.new(double(session: {})) }
 
   before(:each) do
     Split.configuration = Split::Configuration.new
-    Split.redis = G_fakeredis
+    Split.redis = Redis.new(db: 10)
     Split.redis.flushall
     @ab_user = ab_user
     params = nil
